@@ -1,0 +1,109 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(165, 166, 167);
+}
+
+a {
+    text-decoration: none;
+}
+
+header {
+    text-align: center;
+    background-color: black;
+    color: white;
+    padding: 10px;
+}
+
+.produtos-diversos {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    gap: 5px;
+}
+
+.card {
+    border: 1px solid black;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.card::before {
+    content:"OFERTA";
+    width: 80px;
+    height: 80px;
+    border: 3px dotted yellow;
+    background-color: red;
+    border-radius: 50%;
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    right: 1px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.card::after {
+    content: "ULTIMAS UNIDADES";
+    text-align: center;   
+    display: block;
+    width: 100%;
+    height: auto;
+    background-color: red;
+    animation: pulsar ease .5s infinite;
+}
+
+.card img {
+    width: 100px;
+    height: auto;
+
+}
+
+.card .btn-comprar {
+    background-color: grey;
+    padding: 10px 30px;
+    border-radius: 7px;
+    border: 1px solid black;
+    margin: 10px;
+}
+
+.card:first-child {
+    background-color: yellow;
+}
+
+.card:last-child {
+    background-color: green;
+}
+
+.card:nth-child(2) {
+    background-color: blue;
+}
+
+.card:nth-child(3) {
+    background-color: blueviolet;
+}
+
+.card:not(:first-child) {
+    border: 3px solid red;
+}
+
+
+
+
+@keyframes pulsar {
+    0% {transform: scale(.9);}
+    50% {transform: scale(1);}
+    75% {transform: scale(1);}
+    100% {transform: scale(.9);}
+}
